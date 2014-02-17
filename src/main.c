@@ -2,7 +2,8 @@
 #include "parse.h"
 
 int main(){
-  char* str = parse();
-  printf("output of parse:  %s\n", str);
+  char test_string[100] = "(test1 (test2 test3 test4))";
+  char* out_str = parse(test_string);
+  printf("output of parse:  %s\n", out_str);
   return 0;
 }
