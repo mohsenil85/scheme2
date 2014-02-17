@@ -9,9 +9,11 @@ typedef struct node{
 char* parse(char* str){
   int i;
   for (i = 0; i < strlen(str); i++){
-    if (strcmp(str[i], "(")== 0){
+    char* letter = &str[i];
+    printf("letter = %c", *letter);
+    if (strcmp(letter, "(")== 0){
       printf("open paren detected");
-    } else if (str[i] == ")"){
+    } else if (strcmp(letter, ")")== 0){
       printf("close paren detected");
     } else {
       printf("%c\n", str[i]);
