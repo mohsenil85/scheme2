@@ -1,6 +1,7 @@
 #include <stdio.h>
 #include <string.h>
 
+
 char* parse(char* str){
   char copy_of_string[strlen(str)];
   strncpy(copy_of_string, str, strlen(str));
@@ -12,8 +13,3 @@ char* parse(char* str){
   return str;
 }
 
-
-parse:
-char by char,
-     if char = ), return
-     
