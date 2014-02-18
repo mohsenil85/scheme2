@@ -1,5 +1,6 @@
 #include <stdio.h>
 #include <string.h>
+#include <src/stack.h>
 
 
 char* parse(char* str){

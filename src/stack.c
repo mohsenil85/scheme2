@@ -42,3 +42,4 @@ int stack_pop(Stack *s){
 bool stack_is_empty(Stack *s){
   return (s->size == 0);
 }
+

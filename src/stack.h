@@ -1,3 +1,4 @@
+#include <stdbool.h>
 #define STACK_MAX 256
 
 typedef struct {
@@ -14,3 +15,4 @@ void stack_push(Stack *s, int d);
 int stack_pop(Stack *s);
 
 bool stack_is_empty(Stack *s);
+
