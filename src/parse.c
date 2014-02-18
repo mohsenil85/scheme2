@@ -8,10 +8,17 @@ char* parse(char* str){
   char copy_of_string[strlen(str)];
   strncpy(copy_of_string, str, strlen(str));
 
-  while (*str++){
-    printf("%c", str[0]);
-
+  for (int i = 0; i < strlen(str); i++){
+    printf("%c ", str[i]);
+    char* letter = &str[i];
+    if (strncmp(letter, "(", 1) == 0){
+      printf("open paren detected\n");
+    }
+    if (strncmp(letter, ")", 1) == 0){
+      printf("close paren detected\n");
+    }
   }
+
   return str;
 }
 
