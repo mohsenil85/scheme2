@@ -11,12 +11,16 @@ int tests_run = 0;
 
 Stack s;
 
-
+char a = 'a';
+char b = 'b';
 
 static char * test_stack_peek() {
   stack_init(&s);
-  stack_push(&s, 1);
-  mu_assert("error, stack peek failed", 1 == stack_peek(&s));
+  stack_push(&s, a);
+  mu_assert("error, stack peek failed", a == stack_peek(&s));
+  mu_assert("error, stack peek failed", b != stack_peek(&s));
+  mu_assert("error, stack should not be empty after peek", false == stack_is_empty(&s));
+
   return 0;
 }
 
@@ -39,7 +43,7 @@ static char * negate_test_stack_is_empty() {
   mu_assert("error, negate stack is_empty failed", true == stack_is_empty(&s));
   return 0;
 }
-
+//gah i don't have time fo this
 static char * fill_stack() {
   stack_init(&s);
   int i;

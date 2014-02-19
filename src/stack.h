@@ -1,18 +1,19 @@
+#include <stdio.h>
 #include <stdbool.h>
 #define STACK_MAX 256
 
 typedef struct {
-  int data[STACK_MAX];
+  char data[STACK_MAX];
   int size;
 } Stack;
 
 void stack_init(Stack *s);
 
-int stack_peek(Stack *s);
+char stack_peek(Stack *s);
 
-void stack_push(Stack *s, int d);
+void stack_push(Stack *s, char d);
 
-int stack_pop(Stack *s);
+char stack_pop(Stack *s);
 
 bool stack_is_empty(Stack *s);
 
