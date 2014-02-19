@@ -1,7 +1,7 @@
 #include <stdio.h>
 #include <string.h>
 #include <src/stack.h>
-//#include <src/eval.h>
+#include <src/eval.h>
 
 Stack parse_stack;
 Stack eval_stack;
@@ -20,12 +20,14 @@ char* parse(char* str){
           stack_push(&eval_stack, output);
         }
       }
-      if (stack_peek(&parse_stack) == '('){
-        while (!stack_is_empty(&eval_stack)){
-          char output = stack_pop(&eval_stack);
-          printf(" evalualting...: %c\n", output);
-//          eval(eval_stack);
-        }
+      if (stack_pop(&parse_stack) == '('){
+ //       while (!stack_is_empty(&eval_stack)){
+//          char output = stack_pop(&eval_stack);
+ //         printf(" evalualting...: %c\n", output);
+  //        stack_push(&parse_stack, eval(eval_stack));
+  
+        eval(eval_stack);
+//        }
       }
     }
     i++;

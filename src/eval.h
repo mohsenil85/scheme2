@@ -2,6 +2,6 @@
 #define EVAL_H
  
 
-void eval(Stack s);
+char eval(Stack s);
 
 #endif /* EVAL_H */
