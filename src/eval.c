@@ -12,14 +12,15 @@ char eval(Stack s){
     printf("fun is %c\n", fun1);
     char fun2 = stack_pop(&s);
     printf("fun is %c\n", fun2);
+    
+  if  (!stack_is_empty(&s)){
     char fun3 = stack_pop(&s);
-    printf("fun is %c\n", fun3);
     char fun4 = stack_pop(&s);
-    printf("fun is %c\n", fun4);
     char fun5 = stack_pop(&s);
-    printf("fun is %c\n", fun5);
     char fun6 = stack_pop(&s);
-    printf("fun is %c\n", fun6);
+    char fun7 = stack_pop(&s);
+    printf("should be an error %c\n", fun3);
+    }
  //   int args[5];
   //  int i = 0;
    // while (!stack_is_empty(&s)){
@@ -29,7 +30,7 @@ char eval(Stack s){
       //args[i] = atoi(*stack_pop(&s));
       //i++;
     //}
-    printf("fun is %c\n", fun);
+    //printf("fun is %c\n", fun);
     /*
     switch(fun){
       case '+':

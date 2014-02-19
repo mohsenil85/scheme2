@@ -14,7 +14,7 @@ char* parse(char* str){
       stack_push(&parse_stack, *letter);
     }
     if (strncmp(letter, ")", 1) == 0){
-      while (stack_peek(&parse_stack) != '(') {
+    //  while (stack_peek(&parse_stack) != '(') {
         char output = stack_pop(&parse_stack);
         if (output != ' '){
           stack_push(&eval_stack, output);
@@ -28,7 +28,7 @@ char* parse(char* str){
   
         eval(eval_stack);
 //        }
-      }
+     // }
     }
     i++;
   }
