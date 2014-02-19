@@ -10,28 +10,45 @@ char* parse(char* str){
   int i = 0;
   while (i < strlen(str)){
     char* letter = &str[i];
-    if (strncmp(letter, ")", 1) != 0){
-      stack_push(&parse_stack, *letter);
-    }
-    if (strncmp(letter, ")", 1) == 0){
-    //  while (stack_peek(&parse_stack) != '(') {
-        char output = stack_pop(&parse_stack);
-        if (output != ' '){
-          stack_push(&eval_stack, output);
+    //if (strncmp(letter, ")", 1) != 0){
+    if (strncmp(letter, " ", 1) != 0){
+      if (strncmp(letter, ")", 1) != 0){
+        stack_push(&parse_stack, *letter);
+      } else {
+        while(stack_peek(&parse_stack) != '('){
+          char output = stack_pop(&parse_stack);;
+          printf("output = %c\n", output);
         }
       }
-      if (stack_pop(&parse_stack) == '('){
- //       while (!stack_is_empty(&eval_stack)){
-//          char output = stack_pop(&eval_stack);
- //         printf(" evalualting...: %c\n", output);
-  //        stack_push(&parse_stack, eval(eval_stack));
-  
-        eval(eval_stack);
-//        }
-     // }
     }
-    i++;
-  }
-  return str;
+    /*
+    //if (strncmp(letter, ")", 1) == 0){
+    //  while (stack_peek(&parse_stack) != '(') {
+    char output = stack_pop(&parse_stack);
+    if (output != ' '){
+    stack_push(&eval_stack, output);
+    }
+    // }
+    if (stack_pop(&parse_stack) == '('){
+//       while (!stack_is_empty(&eval_stack)){
+char output = stack_pop(&eval_stack);
+//         printf(" evalualting...: %c\n", output);
+//        stack_push(&parse_stack, eval(eval_stack));
+
+eval(eval_stack);
+//        }
+// }
+}
+*/
+i++;
+}
+/*
+   while(!stack_is_empty(&parse_stack)){
+   char output = stack_pop(&parse_stack);
+   printf("letter = %c\n", output);
+   }
+
+*/
+return str;
 }
 
