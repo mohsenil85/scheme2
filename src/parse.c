@@ -1,52 +1,35 @@
 #include <stdio.h>
 #include <string.h>
 #include <src/stack.h>
+//#include <src/eval.h>
 
 Stack parse_stack;
 Stack eval_stack;
 
-/*
-   void handle_open_paren(int data){
-   stack_push(&parse_stack, data);
-   char* output = stack_pop(&parse_stack);
-   printf("poped: %c", output);
-   }
-   */
 char* parse(char* str){
   int i = 0;
   while (i < strlen(str)){
     char* letter = &str[i];
     if (strncmp(letter, ")", 1) != 0){
       stack_push(&parse_stack, *letter);
-      //      printf("%c ", str[i]);
     }
     if (strncmp(letter, ")", 1) == 0){
       while (stack_peek(&parse_stack) != '(') {
         char output = stack_pop(&parse_stack);
-        //stack
-        printf("popped: %c ", output);
-
+        if (output != ' '){
+          stack_push(&eval_stack, output);
+        }
+      }
+      if (stack_peek(&parse_stack) == '('){
+        while (!stack_is_empty(&eval_stack)){
+          char output = stack_pop(&eval_stack);
+          printf(" evalualting...: %c\n", output);
+//          eval(eval_stack);
+        }
       }
     }
     i++;
   }
-  /*
-     char copy_of_string[strlen(str)];
-     strncpy(copy_of_string, str, strlen(str));
-
-     for (int i = 0; i < strlen(str); i++){
-     printf("%c ", str[i]);
-     char* letter = &str[i];
-     if (strncmp(letter, "(", 1) == 0){
-     handle_open_paren( *letter);
-     printf("open paren detected\n");
-     }
-     if (strncmp(letter, ")", 1) == 0){
-     printf("close paren detected\n");
-     }
-     }
-
-*/
   return str;
 }
 
