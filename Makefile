@@ -15,7 +15,7 @@ TARGET   = main
 
 CC       = gcc
 # compiling flags here
-CFLAGS   = -std=c99 -Wall -g -I. 
+CFLAGS   = -std=c99 -Wall -g -I. -Weverything
 
 
 LINKER   = gcc -o
