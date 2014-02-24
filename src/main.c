@@ -4,8 +4,8 @@
 int main(){
 
   int i = 8;
-  Node* n = init_node_int(&i);
-
+  Node* n = init_node(&i);
+  free_node(*n);
 
   printf("main...\n");
   return 0;

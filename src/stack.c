@@ -1,15 +1,15 @@
 #include <stdio.h>
 #include <stdbool.h>
 #include <stdarg.h>
-//#include "stack.h"  //need to go back and fix the sigs for this
-// ie, make this a node stack
+#include "stack.h"
 #define STACK_MAX 256
 
+/*
 typedef struct {
   int data[STACK_MAX];
   int size;
 } Stack;
-
+*/
 void stack_init(Stack *s){
   s->size = 0;
 }

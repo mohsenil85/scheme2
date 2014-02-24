@@ -1,18 +1,7 @@
-#ifndef NODE_H
-#define NODE_H
-#include <stdio.h>
-#include <string.h>
-#include <stdlib.h>
-
+/* This file was automatically generated.  Do not edit! */
 typedef struct {
-  char* node_type;
-  void* data;
-  
-  struct Node *next;
-} Node;
-
-Node* init_node_int(int*  data);
-
+  int* data;
+}Node;
 void free_node(Node n);
-
-#endif /* NODE_H */
+Node *init_node(int data);
+#define INTERFACE 0

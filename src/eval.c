@@ -4,21 +4,13 @@
 #include "stack.h"
 
 char eval(Stack s){
-  //printf("eval hit!\n");
+  printf("eval hit!\n");
   if  (!stack_is_empty(&s)){
-    char fun = stack_pop(&s);
+    int fun = stack_pop(&s);
     printf("fun is %c\n", fun);
-    char fun1 = stack_pop(&s);
-    printf("fun is %c\n", fun1);
-    char fun2 = stack_pop(&s);
-    printf("fun is %c\n", fun2);
     
   if  (!stack_is_empty(&s)){
-    char fun3 = stack_pop(&s);
-    char fun4 = stack_pop(&s);
-    char fun5 = stack_pop(&s);
-    char fun6 = stack_pop(&s);
-    char fun7 = stack_pop(&s);
+    int fun3 = stack_pop(&s);
     printf("should be an error %c\n", fun3);
     }
  //   int args[5];

@@ -2,22 +2,21 @@
 #include <string.h>
 #include <stdlib.h>
 
-typedef struct {
-  char* node_type;
-  void* data;
-  
-  struct Node *next;
-} Node;
+#include "node.h"
 
-Node* init_node_int(int*  data){
+#if INTERFACE
+typedef struct {
+  int* data;
+} Node;
+#endif
+
+Node* init_node(int data){
   Node* n = (Node*)malloc(sizeof(Node));
-  strcpy(n->node_type, "INT");
-  n->data = &data;
+  n->data = data;
   return n;
 }
 
 void free_node(Node n){
-  free(n.node_type);
   free(n.data);
   free(&n);
 }
