@@ -14,6 +14,7 @@ Stack s;
 char a = 'a';
 char b = 'b';
 
+
 static char * test_stack_peek() {
   stack_init(&s);
   stack_push(&s, a);
@@ -41,6 +42,9 @@ static char * test_stack_is_empty() {
 static char * negate_test_stack_is_empty() {
   stack_init(&s);
   mu_assert("error, negate stack is_empty failed", true == stack_is_empty(&s));
+  stack_push(&s, 1);
+  stack_pop(&s);
+  mu_assert("error, negate stack is_empty failed", true == stack_is_empty(&s));
   return 0;
 }
 //gah i don't have time fo this
@@ -54,6 +58,19 @@ static char * fill_stack() {
   return 0;
 }
 
+static char * test_stack_push_args() {
+  stack_init(&s);
+  mu_assert("error, stack should be empty after init", true == stack_is_empty(&s));
+  stack_push_args(&s, 1, 2, 3, 4, 5, 0);
+  mu_assert("error, stack should not be empty after pushing multiple args", false == stack_is_empty(&s));
+  while(!stack_is_empty(&s)){
+    int i = stack_pop(&s);
+    printf("popped: %d\n", i);
+  }
+  mu_assert("error, stack should be empty after popping all things", true == stack_is_empty(&s));
+  return 0;
+}
+
 
 static char * all_tests() {
   mu_run_test(test_stack_peek);
@@ -61,6 +78,7 @@ static char * all_tests() {
   mu_run_test(test_stack_is_empty);
   mu_run_test(negate_test_stack_is_empty);
   mu_run_test(fill_stack);
+  mu_run_test(test_stack_push_args);
   return 0;
 }
 

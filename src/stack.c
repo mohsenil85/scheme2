@@ -1,10 +1,12 @@
 #include <stdio.h>
 #include <stdbool.h>
 #include <stdarg.h>
+//#include "stack.h"  //need to go back and fix the sigs for this
+// ie, make this a node stack
 #define STACK_MAX 256
 
 typedef struct {
-  char data[STACK_MAX];
+  int data[STACK_MAX];
   int size;
 } Stack;
 
@@ -50,9 +52,8 @@ void stack_push_args(Stack *s, int arg1, ...) {
   int i;
 
   va_start(ap, arg1); 
-  for (i = arg1; i >= 0; i = va_arg(ap, int)){
+  for (i = arg1; i != 0; i = va_arg(ap, int)){
     stack_push(s, i);
-    printf("pushed : %d \n", i);
   }
   va_end(ap);
 }

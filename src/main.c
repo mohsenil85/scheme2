@@ -1,16 +1,16 @@
 #include <stdio.h>
-#include "stack.h"
+#include "node.h"
 
 int main(){
-  Stack s;
-  stack_init(&s);
-  stack_push(&s, 0);
-  stack_push_args(&s, 1, 2, 3, 4);
 
-  while(!stack_is_empty(&s)){
-  int output = stack_pop(&s);
-  printf("output = %d\n", output);
-  }
-  
+  int i = 8;
+  Node* n = init_node_int(&i);
+
+
+  printf("main...\n");
   return 0;
+  //char * str = "(+ ( * 3 3 ) ( * 2 2 ))";
+  //parse(str);
+
+
 }

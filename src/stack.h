@@ -1,5 +1,6 @@
 #ifndef STACK_H
 #define STACK_H
+#include <stdarg.h>
 #include <stdio.h>
 #include <stdbool.h>
 #define STACK_MAX 256
@@ -20,4 +21,5 @@ char stack_pop(Stack *s);
 bool stack_is_empty(Stack *s);
 
 void stack_push_args(Stack *s, int arg1, ...);
+
 #endif /* STACK_H */
