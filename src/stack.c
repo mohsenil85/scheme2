@@ -47,7 +47,7 @@ bool stack_is_empty(Stack *s){
 }
 
 
-void stack_push_args(Stack *s, int arg1, ...) {
+void stack_push_vargs(Stack *s, int arg1, ...) {
   va_list ap;
   int i;
 

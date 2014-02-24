@@ -20,6 +20,6 @@ int stack_pop(Stack *s);
 
 bool stack_is_empty(Stack *s);
 
-void stack_push_args(Stack *s, int arg1, ...);
+void stack_push_vargs(Stack *s, int arg1, ...);
 
 #endif /* STACK_H */
