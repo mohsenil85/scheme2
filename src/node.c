@@ -6,13 +6,13 @@
 
 #if INTERFACE
 typedef struct {
-  int* data;
+  int data;
 } Node;
 #endif
 
-Node* init_node(int data){
+Node* init_node(int d){
   Node* n = (Node*)malloc(sizeof(Node));
-  n->data = data;
+  n.data = d;
   return n;
 }
 
