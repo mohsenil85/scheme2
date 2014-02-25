@@ -1,1 +1,2 @@
-./format.sh; ./build.sh
+#./format.sh; ./build.sh
+echo "do you have clang-format?"

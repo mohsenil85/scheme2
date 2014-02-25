@@ -58,10 +58,10 @@ static char * fill_stack() {
   return 0;
 }
 
-static char * test_stack_push_args() {
+static char * test_stack_push_vargs() {
   stack_init(&s);
   mu_assert("error, stack should be empty after init", true == stack_is_empty(&s));
-  stack_push_args(&s, 1, 2, 3, 4, 5, 0);
+  stack_push_vargs(&s, 1, 2, 3, 4, 5, 0);
   mu_assert("error, stack should not be empty after pushing multiple args", false == stack_is_empty(&s));
   while(!stack_is_empty(&s)){
     int i = stack_pop(&s);
@@ -78,7 +78,7 @@ static char * all_tests() {
   mu_run_test(test_stack_is_empty);
   mu_run_test(negate_test_stack_is_empty);
   mu_run_test(fill_stack);
-  mu_run_test(test_stack_push_args);
+  mu_run_test(test_stack_push_vargs);
   return 0;
 }
 

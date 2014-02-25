@@ -1,15 +1,14 @@
 #include <stdio.h>
 #include <stdbool.h>
 #include <stdarg.h>
-#include "stack.h"
+//#include "stack.h"
 #define STACK_MAX 256
 
-/*
 typedef struct {
   int data[STACK_MAX];
   int size;
 } Stack;
-*/
+
 void stack_init(Stack *s) { s->size = 0; }
 
 int stack_peek(Stack *s) {
