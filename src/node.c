@@ -1,12 +1,16 @@
 #include <stdio.h>
 #include <string.h>
 #include <stdlib.h>
+enum TYPE_T{
+  INT, CHAR
+} TYPE_T;
 typedef struct {
   void *data;
   char *title;
+  enum TYPE_T node_type;
 } Node;
 
-Node * node_new () {
+Node * _node_new () {
   Node *n = malloc (sizeof (Node));
   n->data = NULL;
   n->title = NULL;
@@ -29,6 +33,14 @@ void _node_set_data_char (Node *n, const char *data) {
   strcpy (n->data, data);
 }
 
+void _node_set_type(Node *n, enum TYPE_T t){
+  n->node_type = t;
+}
+
+enum TYPE_T _node_get_type(Node *n){
+  return n->node_type;
+}
+
 int _node_get_data_int (Node *n) {
   int i;
   memcpy(&i, n->data, sizeof(int));
@@ -42,9 +54,16 @@ char _node_get_data_char (Node *n) {
 }
 
 
+Node new_node(){
+  Node *n = _node_new();
+  return *n;
+}
 
 int test_fun (){
-  Node *n = node_new();
+  Node *n = _node_new();
+  _node_set_type(n, CHAR );
+  printf("node type was %d\n",_node_get_type(n));
+
   int j = 9;
   const int *i;
   i = &j;

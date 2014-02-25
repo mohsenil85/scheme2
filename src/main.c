@@ -7,6 +7,7 @@ int main(){
 //  int i = 8;
  // Node* n = init_node(&i);
   //free_node(*n);
+  test_fun();
 
   printf("main...\n");
   return 0;
