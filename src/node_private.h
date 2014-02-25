@@ -27,7 +27,4 @@ enum TYPE_T _node_get_type(Node *n);
 int _node_get_data_int (Node *n);
 
 char* _node_get_data_string (Node *n);
-
-
-
 #endif /* NODE_PRIVATE_H */
