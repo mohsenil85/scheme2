@@ -2,8 +2,8 @@
 #include <string.h>
 #include <stdlib.h>
 #include "node_private.h"
-#include "node.h"
-void free_node (Node n) {
+//#include "node.h"
+void free_node (Node *n) {
   _node_free(&n);
 }
 Node new_node(enum TYPE_T type, void* data){
@@ -35,7 +35,8 @@ int test_fun (){
   printf("data of node:%s\n", _node_get_data_string(&m));
   printf("data of node:%d\n", _node_get_data_int(&n));
   //_node_free(&n);
-  //free_node(n);
+  free(&n);
+  //free_I/node(&n);
   printf("start\n");
   return 0;
 }
