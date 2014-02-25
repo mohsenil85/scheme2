@@ -3,26 +3,26 @@
 #include <stdlib.h>
 #include "stack.h"
 
-char eval(Stack s){
+char eval(Stack s) {
   printf("eval hit!\n");
-  if  (!stack_is_empty(&s)){
+  if (!stack_is_empty(&s)) {
     int fun = stack_pop(&s);
     printf("fun is %c\n", fun);
-    
-  if  (!stack_is_empty(&s)){
-    int fun3 = stack_pop(&s);
-    printf("should be an error %c\n", fun3);
+
+    if (!stack_is_empty(&s)) {
+      int fun3 = stack_pop(&s);
+      printf("should be an error %c\n", fun3);
     }
- //   int args[5];
-  //  int i = 0;
-   // while (!stack_is_empty(&s)){
+    //   int args[5];
+    //  int i = 0;
+    // while (!stack_is_empty(&s)){
     //  char output = (stack_pop(&s));
-     // printf("output = %c\n", output);
-//      args[i] = stack_pop(&s);
-      //args[i] = atoi(*stack_pop(&s));
-      //i++;
+    // printf("output = %c\n", output);
+    //      args[i] = stack_pop(&s);
+    // args[i] = atoi(*stack_pop(&s));
+    // i++;
     //}
-    //printf("fun is %c\n", fun);
+    // printf("fun is %c\n", fun);
     /*
     switch(fun){
       case '+':
@@ -36,11 +36,10 @@ char eval(Stack s){
     }
     */
   }
-  //while (!stack_is_empty(&s)){
-  //char output = stack_pop(&s);
+  // while (!stack_is_empty(&s)){
+  // char output = stack_pop(&s);
 
   // printf(" evalualting...: %c\n", output);
   //}
   return '*';
 }
-

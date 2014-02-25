@@ -1,1 +1,1 @@
-char* parse();
+char *parse();

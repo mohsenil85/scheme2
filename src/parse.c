@@ -6,17 +6,18 @@
 Stack parse_stack;
 Stack eval_stack;
 
-char* parse(char* str){
+char *parse(char *str) {
   int i = 0;
-  while (i < strlen(str)){
-    char* letter = &str[i];
-    //if (strncmp(letter, ")", 1) != 0){
-    if (strncmp(letter, " ", 1) != 0){
-      if (strncmp(letter, ")", 1) != 0){
+  while (i < strlen(str)) {
+    char *letter = &str[i];
+    // if (strncmp(letter, ")", 1) != 0){
+    if (strncmp(letter, " ", 1) != 0) {
+      if (strncmp(letter, ")", 1) != 0) {
         stack_push(&parse_stack, *letter);
       } else {
-        while(stack_peek(&parse_stack) != '('){
-          char output = stack_pop(&parse_stack);;
+        while (stack_peek(&parse_stack) != '(') {
+          char output = stack_pop(&parse_stack);
+          ;
           printf("output = %c\n", output);
         }
       }
@@ -40,15 +41,14 @@ eval(eval_stack);
 // }
 }
 */
-i++;
-}
-/*
-   while(!stack_is_empty(&parse_stack)){
-   char output = stack_pop(&parse_stack);
-   printf("letter = %c\n", output);
-   }
+    i++;
+  }
+  /*
+     while(!stack_is_empty(&parse_stack)){
+     char output = stack_pop(&parse_stack);
+     printf("letter = %c\n", output);
+     }
 
-*/
-return str;
+  */
+  return str;
 }
-
