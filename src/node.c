@@ -62,7 +62,7 @@ int test_fun (){
   //test_node_free(&n);
 
   //free(&n);
- // test_node_free(&n);
+  test_node_free(&n);
   printf("start\n");
   return 0;
 }
