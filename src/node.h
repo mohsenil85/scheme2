@@ -1,7 +1,9 @@
-/* This file was automatically generated.  Do not edit! */
-typedef struct {
-  int* data;
-}Node;
-void free_node(Node n);
-Node *init_node(int data);
-#define INTERFACE 0
+#ifndef NODE_H
+#define NODE_H
+#include <string.h>
+#include <stdlib.h>
+#include "node_private.h"
+void free_node (Node n);
+Node new_node(enum TYPE_T type, void* data);
+int test_fun ();
+#endif /* NODE_H */
