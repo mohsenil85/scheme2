@@ -15,7 +15,7 @@ TARGET   = main
 
 CC       = clang
 # compiling flags here
-CFLAGS   = -std=c99 -Wall -g -I. -Wextra -Weverything -Wno-missing-prototypes
+CFLAGS   = -std=c99 -Wall -g -I. -Wextra -Weverything -Wno-missing-prototypes 
 
 
 LINKER   = gcc -o
