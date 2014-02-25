@@ -1,5 +1,6 @@
 #!/bin/bash
 #
+cd ..;
 echo "start tests..."
 for i in `ls test`; do
   echo "testing $i..."
@@ -7,4 +8,5 @@ for i in `ls test`; do
   ./a.out; 
   rm a.out;
 done
-echo "done tests!"
+echo "end tests..."
+cd util;

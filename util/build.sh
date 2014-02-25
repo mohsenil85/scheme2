@@ -1,5 +1,7 @@
 #!/bin/bash
 #
 cd ..;
-make remove; make; ./bin/main
+make remove; make; 
 cd util;
+./run_tests.sh;
+../bin/main
